@@ -31,6 +31,10 @@ function App() {
     })
   }
 
+  function handleReset() {
+    setGameTurns([])
+  }
+
   console.log(gameTurns)
 
   return (
@@ -48,7 +52,11 @@ function App() {
             isActive={activePlayer === 'O'}
           />
         </ol>
-        <GameBoard onSelectSquare={handleSelectSquare} turns={gameTurns} />
+        <GameBoard
+          onSelectSquare={handleSelectSquare}
+          turns={gameTurns}
+          onReset={handleReset}
+        />
       </div>
       <Log turns={gameTurns} />
     </main>
